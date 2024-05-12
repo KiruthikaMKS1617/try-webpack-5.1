@@ -5,6 +5,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
+    publicPath: "dist/", //"https://some-cdn.com/", defaultval = "auto"
   },
   mode: "none",
   module: {
