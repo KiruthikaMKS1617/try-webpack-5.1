@@ -12,7 +12,12 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpg)$/,
-        type: "asset/inline",
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 400 * 1024, // 400kb // usually we use 1kb (REF:xmp-app)
+          },
+        },
       },
     ],
   },
