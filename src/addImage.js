@@ -1,5 +1,6 @@
 import fruitsBasket from "./fruits-basket.png";
 import kiwi from "./kiwi.jpg";
+import altText from "./altText.txt";
 
 function addImage() {
   const body = document.querySelector("body");
@@ -10,7 +11,7 @@ function addImage() {
 
   body.appendChild(img1);
   const img2 = document.createElement("img");
-  img2.alt = "kiwi";
+  img2.alt = altText;
   img2.width = 300;
   img2.src = kiwi;
   body.appendChild(img2);
