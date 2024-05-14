@@ -1,4 +1,5 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -44,4 +45,6 @@ module.exports = {
       },
     ],
   },
+  //Terser is an industry-standard minifier for JavaScript code.
+  plugins: [new TerserPlugin()],
 };
