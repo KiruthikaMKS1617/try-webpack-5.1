@@ -1,13 +1,15 @@
+$font-size: 20px;
+$btn-bg-color: sandybrown;
 body {
   font-family: sans-serif;
 }
 .hello-world-btn {
   padding: 7px 15px;
   color: #fff;
-  background-color: green;
-  font-size: 20px;
+  background-color: $btn-bg-color;
+  font-size: $font-size;
 }
 .hello-world-text {
-  color: green;
+  color: $btn-bg-color;
   font-weight: bold;
 }

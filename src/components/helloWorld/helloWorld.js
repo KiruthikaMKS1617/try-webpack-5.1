@@ -1,4 +1,4 @@
-import "./helloWorld.css";
+import "./helloWorld.scss";
 class HelloWorld {
   render() {
     const body = document.querySelector("body");
