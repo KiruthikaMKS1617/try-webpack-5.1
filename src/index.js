@@ -5,6 +5,5 @@ const heading = new Heading();
 heading.render();
 const helloWorldObj = new HelloWorld();
 helloWorldObj.render();
+helloWorldObj.render();
 // addImage();
-
-console.log("100", 100);
