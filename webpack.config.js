@@ -53,6 +53,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [
+        "**/*", // default - removes all levels of nested folders/files from dist before new build
+        path.join(process.cwd(), "build/**/*"), // config to clean other folders than dist
+      ],
+    }),
   ],
 };
