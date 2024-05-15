@@ -46,6 +46,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"],
+      },
     ],
   },
   //Terser is an industry-standard minifier for JavaScript code.
@@ -57,10 +61,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Hello world",
-      filename: "sub-folder/custom_filename.html",
-      meta: {
-        description: "Some description",
-      },
+      template: "src/index.hbs",
+      description: "Some description",
     }),
   ],
 };
