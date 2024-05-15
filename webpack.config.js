@@ -56,7 +56,7 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
         "**/*", // default - removes all levels of nested folders/files from dist before new build
-        path.join(process.cwd(), "build/**/*"), // config to clean other folders than dist
+        path.join(process.cwd(), "src/**/*"), // config to clean other folders than dist
       ],
     }),
   ],
