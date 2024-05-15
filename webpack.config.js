@@ -55,6 +55,12 @@ module.exports = {
       filename: "styles.[contenthash].css",
     }),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Hello world",
+      filename: "sub-folder/custom_filename.html",
+      meta: {
+        description: "Some description",
+      },
+    }),
   ],
 };
