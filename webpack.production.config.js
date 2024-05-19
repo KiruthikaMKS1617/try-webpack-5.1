@@ -1,5 +1,5 @@
 const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
+// const TerserPlugin = require("terser-webpack-plugin"); - not needed, as it is applied by default for production mode
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "", //"https://some-cdn.com/", defaultval = "auto"
   },
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
@@ -54,7 +54,7 @@ module.exports = {
   },
   //Terser is an industry-standard minifier for JavaScript code.
   plugins: [
-    new TerserPlugin(),
+    // new TerserPlugin(),
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
     }),
