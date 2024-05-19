@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "", //"https://some-cdn.com/", defaultval = "auto"
   },
-  mode: "none",
+  mode: "development",
   module: {
     rules: [
       {
