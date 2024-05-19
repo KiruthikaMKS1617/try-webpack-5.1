@@ -13,6 +13,18 @@ module.exports = {
     publicPath: "", //"https://some-cdn.com/", defaultval = "auto"
   },
   mode: "development",
+  devServer: {
+    port: 8080,
+    open: true,
+    hot: true,
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+    },
+    devMiddleware: {
+      index: "index.html",
+      writeToDisk: true,
+    },
+  },
   module: {
     rules: [
       {
