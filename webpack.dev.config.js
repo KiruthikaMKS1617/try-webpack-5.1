@@ -6,9 +6,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    "hello-world": "./src/hello-world.js",
+    "kiwi-img": "./src/kiwi-img.js",
+  },
   output: {
-    filename: "bundle.js", // [contenthash] - not req for dev envs
+    filename: "[name].bundle.js", // [contenthash] - not req for dev envs
     path: path.resolve(__dirname, "./dist"),
     publicPath: "", //"https://some-cdn.com/", defaultval = "auto"
   },
@@ -54,7 +57,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env"],
+            presets: ["@babel/env", "@babel/preset-react"],
             plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
@@ -73,9 +76,20 @@ module.exports = {
     // }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: "hello-world.html",
+      chunks: ["hello-world"],
       title: "Hello world",
-      template: "src/index.hbs",
-      description: "Some description",
+      template: "src/page-template.hbs",
+      description: "Hello world",
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "kiwi.html",
+      chunks: ["kiwi-img"],
+      title: "Kiwi",
+      template: "src/page-template.hbs",
+      description: "Kiwi",
+      minify: false,
     }),
   ],
 };
