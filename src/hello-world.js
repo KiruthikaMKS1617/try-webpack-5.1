@@ -1,12 +1,10 @@
 import HelloWorld from "./components/helloWorld/helloWorld";
 import Heading from "./components/heading/heading";
 // import addImage from "./addImage";
-import React, { useState } from "react";
-
-const [first, setfirst] = useState("x");
+import React from "react";
 
 const heading = new Heading();
-heading.render("hello world" + first);
+heading.render("hello world");
 const helloWorldObj = new HelloWorld();
 helloWorldObj.render();
 // addImage();
